@@ -159,7 +159,7 @@ function showWeather(cityName, weather) {
     }
 
     const todaysWeatherIcon = document.getElementById('todays-weather-icon');
-    todaysWeatherIcon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.current.weather[0].icon}.png`)
+    todaysWeatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}.png`)
 
     // populate five-day forecast
     const dayForecastContentDivs = fiveDayForecastContainer.querySelectorAll('div.content'); 
@@ -172,7 +172,7 @@ function showWeather(cityName, weather) {
         // note that the first item in weather.daily[] is the weather for the current day
         // skip that by always adding 1 to i
         dateSpan.textContent = getDateInTimezone(weather.daily[i+1].dt, weather.timezone);
-        weatherIcon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.daily[i+1].weather[0].icon}.png`)
+        weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${weather.daily[i+1].weather[0].icon}.png`)
         tempSpan.textContent = weather.daily[i+1].temp.day;
         windSpan.textContent = weather.daily[i+1].wind_speed;
         humiditySpan.textContent = weather.daily[i+1].humidity;
