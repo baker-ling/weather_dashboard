@@ -3,7 +3,7 @@
     object-fit: contain;
     vertical-align: middle;
     background-color: #BBB;
-    border-radius: 0.5em;
+    border-radius: 25%;
 }
 
 /* responsive ordering for mobile */
@@ -18,7 +18,7 @@
 /* styles for uvi classes */
 .uv-index {
     padding: 0.25em;
-    border-radius: 20%;
+    border-radius: 0.5em;
 }
 
 .uvi-low {
