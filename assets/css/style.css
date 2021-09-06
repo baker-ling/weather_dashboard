@@ -3,7 +3,7 @@
     object-fit: contain;
     vertical-align: middle;
     background-color: #BBB;
-    border-radius: 25%;
+    border-radius: 0.5em;
 }
 
 /* responsive ordering for mobile */
