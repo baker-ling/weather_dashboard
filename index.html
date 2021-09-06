@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="hero is-primary">
+        <div class="hero-body">
+            <h1 class="title is-2 is-size-1-desktop">Weather Dashboard</h1>
+        </div>
+    </header>
+    <main class="section">
+        <div class="columns is-reversed-mobile">
+            <section class="column" id="city-picker">
+                <form id="city-search-form" name="city-search" class="panel is-link">
+                    <h2 class="panel-heading">Search for a City:</h2>
+                    <div class="panel-block">
+                        <input class="input" type="text" placeholder="Columbus, OH, USA" id="city-input"/>
+                    </div>
+                    <div class="panel-block">
+                        <button class="button is-link is-fullwidth" id="search-button">Search</button>
+                    </div>
+                </form>
+                <div id="city-history-panel" class="panel is-info">
+                    <h2 class="panel-heading">Recently Searched:</h2>
+                    <div id="recent-cities-container">
+                        <!-- <button class="panel-block button is-fullwidth">Columbus</button>
+                        <button class="panel-block button is-fullwidth">New York City</button> -->
+                    </div>
+                </div>
+            </section>
+            <section class="column is-three-quarters" id="display-area">
+                <div id="welcome-message" class="message is-medium is-info">
+                    <!-- <h2 class="message-header">Getting Started</h2> -->
+                    <p class="message-body">
+                        Type in a city name and click 'Search' to look up the weather for a city.
+                        Or click on the name of a recent city you looked at to bring it up again.
+                    </p>
+                </div>
+                <div id="city-not-found-message" class="message is-danger is-hidden">
+                    <!-- <h2 class="message-header">City Not Found</h2> -->
+                    <p class="message-body">❌ No city was found named '<span id="city-not-found-name">city-not-found-name</span>'.</p>
+                </div>
+                <div id="todays-weather-container" class="box has-background-light is-hidden">
+                    <div class="content">
+                        <h2>
+                            <span id="todays-weather-city-name">City Name</span>
+                            (<span id="todays-weather-date">2021-09-05</span>)
+                            <img id="todays-weather-icon" class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" />
+                        </h2>
+                        <p>Temp: <span class="temperature">23</span> ºC</p>
+                        <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                        <p>Humidity: <span class="humidity">66</span> %</p>
+                        <p>UV Index: <span class="uv-index">0.47</span></p>
+                    </div>
+                </div>
+                <div id="five-day-forecast-container" class="box has-background-light is-hidden">
+                    <div class="columns">
+                        <div class="column">                            
+                            <div class="content">
+                                <h4 class="five-day-forecast-header"><span class="date">Date</span> <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" /></h4>
+                                <p>Temp: <span class="temperature">23</span> ºC</p>
+                                <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                                <p>Humidity: <span class="humidity">66</span> %</p>
+                            </div>
+                        </div>
+                        
+                        <div class="column">                            
+                            <div class="content">
+                                <h4 class="five-day-forecast-header"><span class="date">Date</span> <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" /></h4>
+                                <p>Temp: <span class="temperature">23</span> ºC</p>
+                                <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                                <p>Humidity: <span class="humidity">66</span> %</p>
+                            </div>
+                        </div>
+                        
+                        <div class="column">                            
+                            <div class="content">
+                                <h4 class="five-day-forecast-header"><span class="date">Date</span> <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" /></h4>
+                                <p>Temp: <span class="temperature">23</span> ºC</p>
+                                <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                                <p>Humidity: <span class="humidity">66</span> %</p>
+                            </div>
+                        </div>
+
+                        <div class="column">                            
+                            <div class="content">
+                                <h4 class="five-day-forecast-header"><span class="date">Date</span> <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" /></h4>
+                                <p>Temp: <span class="temperature">23</span> ºC</p>
+                                <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                                <p>Humidity: <span class="humidity">66</span> %</p>
+                            </div>
+                        </div>
+
+                        <div class="column">                            
+                            <div class="content">
+                                <h4 class="five-day-forecast-header"><span class="date">Date</span> <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png" /></h4>
+                                <p>Temp: <span class="temperature">23</span> ºC</p>
+                                <p>Wind: <span class="windspeed">XX</span> m/s</p>
+                                <p>Humidity: <span class="humidity">66</span> %</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="loading-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <progress class="progress is-large is-info" max="100">60%</progress>
+        </div>
+        <!-- <button class="modal-close is-large" aria-label="close"></button> -->
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

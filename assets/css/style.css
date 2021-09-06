@@ -1,0 +1,47 @@
+.weather-icon {
+    height: 1.3em;
+    object-fit: contain;
+    vertical-align: middle;
+    background-color: #BBB;
+    border-radius: 25%;
+}
+
+/* responsive ordering for mobile */
+@media(max-width: 768px) {
+    .columns.is-reversed-mobile {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+}
+
+
+/* styles for uvi classes */
+.uv-index {
+    padding: 0.25em;
+    border-radius: 20%;
+}
+
+.uvi-low {
+    background-color: #0f0;
+    font-weight: 400;
+}
+
+.uvi-moderate {
+    background-color: yellow;
+    font-weight: 500;
+}
+
+.uvi-high {
+    background-color: orange;
+    font-weight: 600;
+}
+
+.uvi-very-high {
+    background-color: #ff5050;
+    font-weight: 700;
+}
+
+.uvi-extreme {
+    background-color: violet;
+    font-weight: 900;
+}
