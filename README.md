@@ -1,4 +1,4 @@
-# Weather Dashboard
+# Weather Dashboard by Brian Baker
 A simple weather dashboard using JavaScript, Bulma, and the openweathermap.org geocoding and one-call APIs.
 
 The app is deployed [here](https://baker-ling.github.io/weather_dashboard/index.html).
