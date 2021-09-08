@@ -160,7 +160,7 @@ function showWeather(cityName, weather) {
 
     const todaysWeatherIcon = document.getElementById('todays-weather-icon');
     todaysWeatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}.png`);
-    todaysWeatherIcon.setAttribute('alt', `weather.current.weather[0].description`);
+    todaysWeatherIcon.setAttribute('alt', weather.current.weather[0].description);
 
     // populate five-day forecast
     const dayForecastContentDivs = fiveDayForecastContainer.querySelectorAll('div.content'); 
